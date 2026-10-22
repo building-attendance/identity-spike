@@ -1,0 +1,14 @@
+# Throwaway repository for a permissions spike. One check that always passes, so a ruleset can require it.
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo ok
